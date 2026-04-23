@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://smartdairy.universalfuturetech.com/192.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | SnS Dairy</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        .fade-left.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+        .fade-right.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Chrome / Edge / Safari */
+        ::-webkit-scrollbar {
+            width: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hover = show scrollbar */
+        body:hover ::-webkit-scrollbar {
+            opacity: 1;
+        }
+
+        /* Scroll active state */
+        body.scrolling ::-webkit-scrollbar {
+            opacity: 1;
+        }
+
+        /* Hover effect on thumb */
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(
+                    to bottom,
+                    rgba(59,130,246,0.6),
+                    rgba(99,102,241,0.6)
+            );
+        }
+
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(99,102,241,0.5) transparent;
+        }
+
+        /* Mobile thinner */
+        @media (max-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/70 border-b border-gray-200">
+    <div class="flex justify-between items-center px-6 md:px-20 py-4">
+
+        <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('/')">
+            <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-10 h-10 rounded-xl shadow" />
+            <span class="text-xl font-bold">
+                SnS <span class="text-blue-600">Dairy</span>
+            </span>
+        </div>
+
+        <button onclick="navigateTo('/login')"
+                class="bg-blue-600 text-white px-5 py-2 rounded-full shadow hover:bg-blue-700 transition">
+            Login
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden pt-36 pb-24 px-6 md:px-20 text-center bg-gradient-to-br from-blue-50 via-white to-blue-100">
+
+    <div class="absolute top-[-100px] right-[-100px] w-[420px] h-[420px] bg-blue-200 opacity-30 blur-[140px] rounded-full"></div>
+    <div class="absolute bottom-[-100px] left-[-100px] w-[320px] h-[320px] bg-indigo-200 opacity-30 blur-[140px] rounded-full"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto">
+
+        <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-md border px-5 py-2 rounded-full text-sm font-medium shadow-sm mb-6">
+            <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+            Built for Modern Dairy Businesses
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight fade-up">
+            About <span class="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">SnS Dairy</span>
+        </h1>
+
+        <p class="mt-6 text-gray-600 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto fade-up">
+            We are building modern digital solutions to simplify, automate, and grow dairy businesses across India. Our goal is to replace manual work with smart systems that save time, reduce errors, and improve efficiency.
+        </p>
+
+        <p class="mt-4 text-gray-500 text-base md:text-lg max-w-2xl mx-auto fade-up">
+            From milk collection and billing to customer management and payments, SnS Dairy helps dairy owners manage everything in one powerful and easy-to-use platform.
+        </p>
+    </div>
+</section>
+
+<!-- STORY -->
+<section class="px-6 md:px-20 py-20 grid md:grid-cols-2 gap-12 items-center">
+
+    <div class="fade-left">
+        <h2 class="text-3xl font-bold">Our Story</h2>
+
+        <p class="mt-6 text-gray-600 leading-relaxed">
+            SnS Dairy was created with a vision to digitize traditional dairy operations. Many dairy owners still rely on manual records, which leads to errors, inefficiencies, and loss of data.
+        </p>
+
+        <p class="mt-4 text-gray-600 leading-relaxed">
+            Our platform provides a simple, powerful, and reliable solution to manage milk collection, billing, payments, and customers — all from one place.
+        </p>
+    </div>
+
+    <div class="flex justify-center fade-right">
+        <div class="bg-white p-4 rounded-3xl shadow-2xl border">
+            <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-80 rounded-xl" />
+        </div>
+    </div>
+
+</section>
+
+<!-- MISSION -->
+<section class="bg-gray-50 py-20 px-6 md:px-20">
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+        <div class="p-8 bg-white rounded-2xl shadow-lg border fade-up">
+            <h3 class="text-2xl font-bold text-blue-600">Our Mission</h3>
+            <p class="mt-4 text-gray-600">
+                To empower dairy businesses with technology that simplifies operations, increases efficiency, and boosts profitability.
+            </p>
+        </div>
+
+        <div class="p-8 bg-white rounded-2xl shadow-lg border fade-up">
+            <h3 class="text-2xl font-bold text-blue-600">Our Vision</h3>
+            <p class="mt-4 text-gray-600">
+                To become the most trusted dairy management platform in India by delivering reliable and scalable solutions.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="relative px-6 md:px-20 py-24 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
+
+    <!-- Background blur -->
+    <div class="absolute top-[-80px] left-[-80px] w-[300px] h-[300px] bg-blue-200/30 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-[-80px] right-[-80px] w-[300px] h-[300px] bg-indigo-200/30 blur-[120px] rounded-full"></div>
+
+    <div class="relative z-10">
+
+        <h3 class="text-3xl md:text-4xl font-extrabold text-center mb-4">
+            Why Choose <span class="text-blue-600">SnS Dairy</span>
+        </h3>
+
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
+            Built specifically for dairy business owners who want simplicity, accuracy,
+            and complete control over their daily operations without complexity.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- CARD 1 -->
+            <div class="fade-up group relative p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-transparent hover:-translate-y-2 transition duration-300">
+                <div class="h-full bg-white/80 backdrop-blur-xl p-7 rounded-3xl shadow-xl border border-white/40 group-hover:shadow-2xl transition">
+
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 font-bold text-lg mb-4">
+                        1
+                    </div>
+
+                    <h4 class="font-bold text-xl text-gray-800">
+                        Easy to Use
+                    </h4>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed text-sm">
+                        A clean and intuitive interface designed for everyone. You don’t need technical knowledge to manage your dairy operations. Everything is simple, fast, and easy to understand from day one.
+                    </p>
+
+                    <div class="mt-5 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="fade-up group relative p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-transparent hover:-translate-y-2 transition duration-300">
+                <div class="h-full bg-white/80 backdrop-blur-xl p-7 rounded-3xl shadow-xl border border-white/40 group-hover:shadow-2xl transition">
+
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 font-bold text-lg mb-4">
+                        2
+                    </div>
+
+                    <h4 class="font-bold text-xl text-gray-800">
+                        Accurate Billing
+                    </h4>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed text-sm">
+                        Automatically calculate milk entries, fat rates, and totals without manual effort. Eliminate human errors and generate professional, precise bills every time.
+                    </p>
+
+                    <div class="mt-5 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="fade-up group relative p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-transparent hover:-translate-y-2 transition duration-300">
+                <div class="h-full bg-white/80 backdrop-blur-xl p-7 rounded-3xl shadow-xl border border-white/40 group-hover:shadow-2xl transition">
+
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 font-bold text-lg mb-4">
+                        3
+                    </div>
+
+                    <h4 class="font-bold text-xl text-gray-800">
+                        Secure Data
+                    </h4>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed text-sm">
+                        Your business data is fully protected with secure cloud storage. No risk of data loss, and you can access your information anytime from anywhere safely.
+                    </p>
+
+                    <div class="mt-5 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="fade-up group relative p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-transparent hover:-translate-y-2 transition duration-300">
+                <div class="h-full bg-white/80 backdrop-blur-xl p-7 rounded-3xl shadow-xl border border-white/40 group-hover:shadow-2xl transition">
+
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 font-bold text-lg mb-4">
+                        4
+                    </div>
+
+                    <h4 class="font-bold text-xl text-gray-800">
+                        Mobile Friendly
+                    </h4>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed text-sm">
+                        Designed for mobile-first usage so you can manage your entire dairy from your phone. Perfect for on-the-go usage, even in rural environments.
+                    </p>
+
+                    <div class="mt-5 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+
+                </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="fade-up group relative p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-transparent hover:-translate-y-2 transition duration-300">
+                <div class="h-full bg-white/80 backdrop-blur-xl p-7 rounded-3xl shadow-xl border border-white/40 group-hover:shadow-2xl transition">
+
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 font-bold text-lg mb-4">
+                        5
+                    </div>
+
+                    <h4 class="font-bold text-xl text-gray-800">
+                        Real-Time Reports
+                    </h4>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed text-sm">
+                        Get instant insights into sales, purchases, and payments.
+                    </p>
+
+                    <div class="mt-5 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+
+                </div>
+            </div>
+
+            <!-- CARD 6 -->
+            <div class="fade-up group relative p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/20 via-indigo-500/20 to-transparent hover:-translate-y-2 transition duration-300">
+                <div class="h-full bg-white/80 backdrop-blur-xl p-7 rounded-3xl shadow-xl border border-white/40 group-hover:shadow-2xl transition">
+
+                    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-100 text-blue-600 font-bold text-lg mb-4">
+                        6
+                    </div>
+
+                    <h4 class="font-bold text-xl text-gray-800">
+                        Cloud Backup
+                    </h4>
+
+                    <p class="text-gray-600 mt-3 leading-relaxed text-sm">
+                        Never worry about losing your records. Automatic cloud backup ensures your data is always safe, recoverable, and accessible whenever you need it.
+                    </p>
+
+                    <div class="mt-5 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-10 px-6 md:px-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 text-white text-center">
+
+    <h3 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+        Ready to Transform Your <br />
+        <span class="text-blue-100">Dairy Business?</span>
+    </h3>
+
+    <p class="mt-6 text-blue-100 text-lg">
+        Simplify operations, automate billing, and manage everything in one place. Join dairy owners who are saving time and growing faster with smart technology.
+    </p>
+
+    <div class="mt-10">
+        <a href="tel:+919904040051"
+           class="px-8 py-3 bg-green-500 rounded-full font-semibold shadow-xl hover:bg-green-600 transition">
+            Call Now
+        </a>
+    </div>
+
+</section>
+
+<footer class="bg-gray-900 text-gray-400 py-10 text-center">
+    © 2026 SnS Dairy. All rights reserved.
+</footer>
+
+<script>
+    function navigateTo(path) {
+        window.location.href = path;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    });
+    document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>

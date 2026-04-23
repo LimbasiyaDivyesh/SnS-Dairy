@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://smartdairy.universalfuturetech.com/192.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SnS Dairy</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* =========================
+           FLOAT ANIMATION
+        ========================= */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* =========================
+           FADE ANIMATION
+        ========================= */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================
+           GLASS SCROLLBAR (BASE)
+        ========================= */
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Chrome / Edge / Safari */
+        ::-webkit-scrollbar {
+            width: 8px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hover = show scrollbar */
+        body:hover ::-webkit-scrollbar {
+            opacity: 1;
+        }
+
+        /* Scroll active state */
+        body.scrolling ::-webkit-scrollbar {
+            opacity: 1;
+        }
+
+        /* Hover effect on thumb */
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(
+                    to bottom,
+                    rgba(59,130,246,0.6),
+                    rgba(99,102,241,0.6)
+            );
+        }
+
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(99,102,241,0.5) transparent;
+        }
+
+        /* Mobile thinner */
+        @media (max-width: 768px) {
+            ::-webkit-scrollbar {
+                width: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+<!-- HEADER -->
+<header class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/70 border-b border-gray-200">
+    <div class="flex justify-between items-center px-6 md:px-20 py-4">
+
+        <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('/')">
+            <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-10 h-10 rounded-xl shadow" />
+            <span class="text-xl font-bold tracking-tight">
+                SnS <span class="text-blue-600">Dairy</span>
+            </span>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8 text-gray-600 font-medium">
+            <a href="/about" class="hover:text-blue-600 transition">About</a>
+            <a href="/contact" class="hover:text-blue-600 transition">Contact</a>
+        </nav>
+
+        <button onclick="navigateTo('/login')"
+                class="relative bg-blue-600 text-white px-5 py-2.5 rounded-full font-semibold shadow-lg hover:bg-blue-700 transition overflow-hidden">
+            <span class="relative z-10">Login</span>
+            <span class="absolute inset-0 bg-white opacity-10 blur-md"></span>
+        </button>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative overflow-hidden px-6 md:px-20 py-32 bg-gradient-to-br from-blue-50 via-white to-blue-100">
+
+    <div class="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-blue-200 opacity-30 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] bg-indigo-200 opacity-30 blur-[120px] rounded-full"></div>
+
+    <div class="grid md:grid-cols-2 gap-16 items-center relative z-10">
+
+        <div>
+            <div class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-md border px-4 py-1.5 rounded-full text-sm font-medium shadow-sm mb-6">
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                Trusted by 20+ Dairy Owners
+            </div>
+
+            <h2 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                Run Your Dairy <br />
+                <span class="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+                    Business Smarter
+                </span>
+            </h2>
+
+            <p class="mt-6 text-gray-600 text-lg leading-relaxed">
+                Manage milk collection, billing, payments, and customers — all in one powerful platform built for modern dairy businesses.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-6 text-sm text-gray-700">
+                ✔ Fast & Secure
+            </div>
+        </div>
+
+        <div class="relative flex justify-center fade-up">
+            <div class="absolute w-[350px] h-[350px] bg-blue-300 opacity-20 blur-[100px] rounded-full"></div>
+
+            <div class="relative bg-white/80 backdrop-blur-md p-4 rounded-[28px] shadow-2xl border float">
+                <img src="https://smartdairy.universalfuturetech.com/192.png" class="rounded-2xl"/>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="relative px-6 md:px-20 py-20 bg-gradient-to-b from-white to-blue-50">
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+
+        <div class="p-8 rounded-2xl bg-white/70 backdrop-blur-md border shadow-xl fade-up">
+            <h3 class="text-5xl font-extrabold text-blue-600">1000+</h3>
+            <p class="text-gray-600 mt-3 text-lg">Active Users</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-white/70 backdrop-blur-md border shadow-xl fade-up">
+            <h3 class="text-5xl font-extrabold text-blue-600">20K+</h3>
+            <p class="text-gray-600 mt-3 text-lg">Monthly Entries</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-white/70 backdrop-blur-md border shadow-xl fade-up">
+            <h3 class="text-5xl font-extrabold text-blue-600">100%</h3>
+            <p class="text-gray-600 mt-3 text-lg">Accuracy</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="px-6 md:px-20 py-10 bg-gradient-to-b from-white to-gray-50">
+
+    <h3 class="text-4xl font-bold text-center mb-20">
+        Everything You Need to Manage Dairy
+    </h3>
+
+    <div class="space-y-28">
+
+        <!-- 1 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
+
+            <div class="relative flex justify-center">
+                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+
+                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
+                    <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-72 rounded-xl" alt="Mobile Dairy Management"/>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-3xl font-bold mt-4 leading-tight">
+                    Mobile First Management
+                </h4>
+
+                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                    Run your entire dairy business directly from your mobile phone without needing a computer. Easily add and manage customers, record daily milk collection (morning & evening), update pricing, and monitor operations in real-time. The system is designed to work smoothly even on slow internet connections, ensuring uninterrupted usage in rural and semi-urban areas. Whether you are at the dairy, on delivery, or traveling, your business stays fully in your control at all times.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- 2 (REVERSE) -->
+        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
+
+            <div class="order-2 md:order-1">
+                <h4 class="text-3xl font-bold mt-4 leading-tight">
+                    Automatic Billing System
+                </h4>
+
+                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                    Save hours of manual work with a fully automated billing system that calculates everything for you. Generate accurate monthly or custom-period bills based on milk quantity, fat rates, and pricing rules. Eliminate calculation errors, reduce disputes, and provide clear, professional invoices to your customers instantly. You can also maintain billing history, making it easy to track past records and ensure complete financial transparency.
+                </p>
+            </div>
+
+            <div class="relative flex justify-center order-1 md:order-2">
+                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+
+                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
+                    <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-72 rounded-xl" alt="Dairy Billing System"/>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 3 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
+
+            <div class="relative flex justify-center">
+                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+
+                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
+                    <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-72 rounded-xl" alt="Payment Tracking"/>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-3xl font-bold mt-4 leading-tight">
+                    Smart Payment Tracking
+                </h4>
+
+                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                    Stay on top of your finances with an intelligent payment tracking system. Monitor customer dues, partial payments, and full settlements with complete clarity. Get a detailed history of every transaction and avoid confusion in collections. This helps you improve cash flow, reduce outstanding balances, and maintain trust with your customers by keeping everything transparent and well-organized.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- 4 (REVERSE) -->
+        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
+
+            <div class="order-2 md:order-1">
+                <h4 class="text-3xl font-bold mt-4 leading-tight">
+                    Customer Management
+                </h4>
+
+                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                    Manage all your customer information in one place with complete organization. Store details like name, phone number, address, milk type preference, delivery schedule, and billing history. Quickly access and update records anytime. This helps you provide better service, avoid mistakes in delivery, and build long-term relationships with your customers through consistent and reliable management.
+                </p>
+            </div>
+
+            <div class="relative flex justify-center order-1 md:order-2">
+                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+
+                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
+                    <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-72 rounded-xl" alt="Customer Management"/>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 5 -->
+        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
+
+            <div class="relative flex justify-center">
+                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+
+                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
+                    <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-72 rounded-xl" alt="Sales Tracking"/>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-3xl font-bold mt-4 leading-tight">
+                    Sales & Purchase Tracking
+                </h4>
+
+                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                    Track your daily milk sales and purchases with real-time insights. Maintain accurate records of how much milk is bought and sold each day, helping you understand your profit margins and stock flow. Analyze performance trends and make smarter business decisions with clear data. This ensures better control over your operations and helps you grow your dairy business efficiently.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- 6 (REVERSE) -->
+        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
+
+            <div class="order-2 md:order-1">
+                <h4 class="text-3xl font-bold mt-4 leading-tight">
+                    Advanced Settings
+                </h4>
+
+                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                    Customize the entire system according to your business requirements. Easily configure milk pricing, fat calculation methods, packaging types, billing formats, and operational preferences. The flexible settings allow you to adapt the platform to your unique workflow instead of changing your process. This ensures maximum efficiency, accuracy, and convenience for your daily operations.
+                </p>
+            </div>
+
+            <div class="relative flex justify-center order-1 md:order-2">
+                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+
+                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
+                    <img src="https://smartdairy.universalfuturetech.com/192.png" class="w-72 rounded-xl" alt="Advanced Settings"/>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="relative overflow-hidden py-8 px-6 md:px-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 text-white text-center">
+
+    <div class="absolute top-[-80px] left-[-80px] w-[300px] h-[300px] bg-white/20 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-[-80px] right-[-80px] w-[300px] h-[300px] bg-indigo-300/20 blur-[120px] rounded-full"></div>
+
+    <div class="relative z-10 max-w-3xl mx-auto">
+
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-medium mb-6 border border-white/20">
+            Trusted by Dairy Owners
+        </div>
+
+        <h3 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
+            Start Growing Your Milk Business <br />
+            <span class="text-blue-100">Smarter & Faster</span>
+        </h3>
+
+        <p class="mt-6 text-blue-100 text-lg leading-relaxed">
+            Join modern dairy owners who are simplifying operations, saving time,
+            and increasing profits with one powerful platform.
+        </p>
+
+        <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+
+            <a
+                    href="tel:+919904040051"
+                    class="px-8 py-3 bg-green-500 text-white rounded-full font-semibold shadow-xl hover:bg-green-600 hover:scale-105 transition"
+            >
+                Call Now
+            </a>
+
+        </div>
+
+        <p class="mt-6 text-sm text-blue-200">
+            Setup in 2 minutes
+        </p>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-10 text-center">
+    © 2026 SnS Dairy. All rights reserved.
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/919904040051"
+   target="_blank"
+   class="fixed bottom-6 right-6 z-50">
+    <div class="flex items-center gap-3 bg-green-500 text-white px-5 py-3 rounded-full shadow-2xl hover:bg-green-600 transition">
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+        >
+            <path d="M20.52 3.48A11.91 11.91 0 0012.02 0C5.38 0 .02 5.36.02 12c0 2.11.55 4.17 1.6 5.99L0 24l6.17-1.61A11.94 11.94 0 0012.02 24c6.64 0 12-5.36 12-12 0-3.2-1.25-6.2-3.5-8.52zM12.02 21.6c-1.82 0-3.6-.49-5.16-1.42l-.37-.22-3.66.96.98-3.56-.24-.38A9.55 9.55 0 012.42 12c0-5.28 4.3-9.6 9.6-9.6 2.56 0 4.97 1 6.78 2.82A9.53 9.53 0 0121.62 12c0 5.3-4.32 9.6-9.6 9.6zm5.26-7.2c-.29-.14-1.72-.85-1.99-.95-.26-.1-.45-.14-.64.14-.19.29-.74.95-.9 1.14-.17.19-.33.21-.62.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.12-.59.12-.12.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.47-.48-.64-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.44s1.02 2.83 1.16 3.03c.14.19 2.01 3.06 4.88 4.29.68.29 1.21.46 1.62.59.68.21 1.3.18 1.79.11.55-.08 1.72-.7 1.96-1.38.24-.67.24-1.25.17-1.38-.07-.12-.26-.19-.55-.33z"/>
+        </svg>
+
+        <span class="hidden md:block font-medium">
+            Chat with us
+        </span>
+    </div>
+</a>
+
+<!-- JS -->
+<script>
+    function navigateTo(path) {
+        window.location.href = path;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
