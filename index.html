@@ -100,6 +100,54 @@
                 width: 4px;
             }
         }
+
+        /* =========================
+   PREMIUM CARD HOVER
+========================= */
+
+        .card-hover {
+            position: relative;
+            transition: all 0.35s ease;
+        }
+
+        .card-hover::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(99,102,241,0.15));
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .card-hover:hover::before {
+            opacity: 1;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow:
+                    0 20px 40px rgba(0,0,0,0.08),
+                    0 10px 20px rgba(59,130,246,0.15);
+        }
+
+        /* ICON ANIMATION */
+        .card-icon {
+            transition: all 0.35s ease;
+        }
+
+        .card-hover:hover .card-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        /* TEXT SLIGHT SHIFT */
+        .card-hover:hover h4 {
+            transform: translateY(-2px);
+        }
+
+        .card-hover:hover p {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 
@@ -148,17 +196,17 @@
             </div>
 
             <h2 class="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
-                Run Your Dairy <br />
-                <span class="bg-gradient-to-r from-blue-400 to-indigo-300 bg-clip-text text-transparent">
+                Smart Milk Delivery & <br />
+                <span class="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
                     Business Smarter
                 </span>
             </h2>
 
-            <p class="mt-6 text-gray-200 text-lg leading-relaxed max-w-xl">
-                Manage milk collection, billing, payments, and customers — all in one powerful platform built for modern dairy businesses.
+            <p class="mt-6 text-white text-lg leading-relaxed max-w-xl">
+                Manage your entire dairy business with ease — from daily milk collection and automated billing to payment tracking and customer management — all in one powerful platform built for modern, growing dairy operations.
             </p>
 
-            <div class="mt-6 flex flex-wrap gap-6 text-sm text-gray-200">
+            <div class="mt-6 flex flex-wrap gap-6 text-sm text-white">
                 ✔ Fast & Secure
             </div>
 
@@ -172,8 +220,7 @@
 
             <!-- Glass Card -->
             <div class="relative bg-white/10 backdrop-blur-xl p-4 rounded-[30px] shadow-2xl border border-white/20">
-                <img src="public/img.png"
-                     class="rounded-2xl shadow-lg"/>
+                <img src="public/img.png" class="rounded-2xl"/>
             </div>
 
         </div>
@@ -183,169 +230,289 @@
 
 <!-- STATS -->
 <section class="relative px-6 md:px-20 py-20 bg-gradient-to-b from-white to-blue-50">
-    <div class="grid md:grid-cols-3 gap-8 text-center">
+    <div class="grid md:grid-cols-4 gap-8 text-center">
 
         <div class="p-8 rounded-2xl bg-white/70 backdrop-blur-md border shadow-xl fade-up">
-            <h3 class="text-5xl font-extrabold text-blue-600">1000+</h3>
-            <p class="text-gray-600 mt-3 text-lg">Active Users</p>
+            <h3 class="text-5xl font-extrabold text-blue-600">20+</h3>
+            <p class="text-gray-600 mt-3 text-lg">Dairies</p>
         </div>
 
         <div class="p-8 rounded-2xl bg-white/70 backdrop-blur-md border shadow-xl fade-up">
-            <h3 class="text-5xl font-extrabold text-blue-600">20K+</h3>
+            <h3 class="text-5xl font-extrabold text-blue-600">2K+</h3>
+            <p class="text-gray-600 mt-3 text-lg">Customers</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-white/70 backdrop-blur-md border shadow-xl fade-up">
+            <h3 class="text-5xl font-extrabold text-blue-600">50K+</h3>
             <p class="text-gray-600 mt-3 text-lg">Monthly Entries</p>
         </div>
 
         <div class="p-8 rounded-2xl bg-white/70 backdrop-blur-md border shadow-xl fade-up">
-            <h3 class="text-5xl font-extrabold text-blue-600">100%</h3>
-            <p class="text-gray-600 mt-3 text-lg">Accuracy</p>
+            <h3 class="text-5xl font-extrabold text-blue-600">₹50L+</h3>
+            <p class="text-gray-600 mt-3 text-lg">Billing Managed</p>
         </div>
 
     </div>
 </section>
 
-<!-- FEATURES -->
-<section class="px-6 md:px-20 py-10 bg-gradient-to-b from-white to-gray-50">
+<section class="px-6 md:px-20 py-24 bg-[#f8fafc]">
 
-    <h3 class="text-4xl font-bold text-center mb-20">
-        Everything You Need to Manage Dairy
-    </h3>
+    <!-- Heading -->
+    <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+            Everything you need to scale
+        </h2>
+        <p class="text-gray-500 mt-4 text-lg">
+            Powerful features designed specifically for the Indian dairy ecosystem.
+        </p>
+    </div>
 
-    <div class="space-y-28">
+    <!-- Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
 
-        <!-- 1 -->
-        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
-
-            <div class="relative flex justify-center">
-                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-
-                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
-                    <img src="public/img.png" class="w-72 rounded-xl" alt="Mobile Dairy Management"/>
-                </div>
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#3381e9" viewBox="0 0 256 256" class="h-7 w-7" aria-hidden="true"><path d="M192,56V200H64V56Z" opacity="0.2"></path><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"></path></svg>
             </div>
-
-            <div>
-                <h4 class="text-3xl font-bold mt-4 leading-tight">
-                    Mobile First Management
-                </h4>
-
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Run your entire dairy business directly from your mobile phone without needing a computer. Easily add and manage customers, record daily milk collection (morning & evening), update pricing, and monitor operations in real-time. The system is designed to work smoothly even on slow internet connections, ensuring uninterrupted usage in rural and semi-urban areas. Whether you are at the dairy, on delivery, or traveling, your business stays fully in your control at all times.
-                </p>
-            </div>
-
+            <h4 class="font-semibold text-lg text-gray-900">Mobile First Management</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Manage your entire dairy business from your phone—track collections, customers, and operations anytime with ease.
+            </p>
         </div>
 
-        <!-- 2 (REVERSE) -->
-        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-6">
 
-            <div class="order-2 md:order-1">
-                <h4 class="text-3xl font-bold mt-4 leading-tight">
-                    Automatic Billing System
-                </h4>
-
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Save hours of manual work with a fully automated billing system that calculates everything for you. Generate accurate monthly or custom-period bills based on milk quantity, fat rates, and pricing rules. Eliminate calculation errors, reduce disputes, and provide clear, professional invoices to your customers instantly. You can also maintain billing history, making it easy to track past records and ensure complete financial transparency.
-                </p>
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="5" width="18" height="16" rx="2"/>
+                    <path d="M16 3v4M8 3v4M3 11h18"/>
+                </svg>
             </div>
-
-            <div class="relative flex justify-center order-1 md:order-2">
-                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-
-                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
-                    <img src="public/img.png" class="w-72 rounded-xl" alt="Dairy Billing System"/>
-                </div>
-            </div>
-
+            <h4 class="font-semibold text-lg text-gray-900">Daily Milk Entry</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Record morning and evening milk collection quickly with a simple, fast, and error-free system.
+            </p>
         </div>
 
-        <!-- 3 -->
-        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
-
-            <div class="relative flex justify-center">
-                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-
-                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
-                    <img src="public/img.png" class="w-72 rounded-xl" alt="Payment Tracking"/>
-                </div>
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-6">
+                <svg width="22" height="22" fill="none" stroke="#f49c27" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
             </div>
-
-            <div>
-                <h4 class="text-3xl font-bold mt-4 leading-tight">
-                    Smart Payment Tracking
-                </h4>
-
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Stay on top of your finances with an intelligent payment tracking system. Monitor customer dues, partial payments, and full settlements with complete clarity. Get a detailed history of every transaction and avoid confusion in collections. This helps you improve cash flow, reduce outstanding balances, and maintain trust with your customers by keeping everything transparent and well-organized.
-                </p>
-            </div>
-
+            <h4 class="font-semibold text-lg text-gray-900">Automatic Billing System</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Generate accurate bills automatically based on quantity and pricing, saving time and avoiding manual errors.
+            </p>
         </div>
 
-        <!-- 4 (REVERSE) -->
-        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
-
-            <div class="order-2 md:order-1">
-                <h4 class="text-3xl font-bold mt-4 leading-tight">
-                    Customer Management
-                </h4>
-
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Manage all your customer information in one place with complete organization. Store details like name, phone number, address, milk type preference, delivery schedule, and billing history. Quickly access and update records anytime. This helps you provide better service, avoid mistakes in delivery, and build long-term relationships with your customers through consistent and reliable management.
-                </p>
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M12 8v4l3 3"/>
+                    <circle cx="12" cy="12" r="10"/>
+                </svg>
             </div>
-
-            <div class="relative flex justify-center order-1 md:order-2">
-                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-
-                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
-                    <img src="public/img.png" class="w-72 rounded-xl" alt="Customer Management"/>
-                </div>
-            </div>
-
+            <h4 class="font-semibold text-lg text-gray-900">Smart Payment Tracking</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Track dues, payments, and balances with full clarity to improve cash flow and reduce confusion.
+            </p>
         </div>
 
-        <!-- 5 -->
-        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
-
-            <div class="relative flex justify-center">
-                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
-
-                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
-                    <img src="public/img.png" class="w-72 rounded-xl" alt="Sales Tracking"/>
-                </div>
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                </svg>
             </div>
-
-            <div>
-                <h4 class="text-3xl font-bold mt-4 leading-tight">
-                    Sales & Purchase Tracking
-                </h4>
-
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Track your daily milk sales and purchases with real-time insights. Maintain accurate records of how much milk is bought and sold each day, helping you understand your profit margins and stock flow. Analyze performance trends and make smarter business decisions with clear data. This ensures better control over your operations and helps you grow your dairy business efficiently.
-                </p>
-            </div>
-
+            <h4 class="font-semibold text-lg text-gray-900">Customer Management</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Store and manage customer details, schedules, and billing history in one organized system.
+            </p>
         </div>
 
-        <!-- 6 (REVERSE) -->
-        <div class="grid md:grid-cols-2 gap-12 items-center fade-up">
-
-            <div class="order-2 md:order-1">
-                <h4 class="text-3xl font-bold mt-4 leading-tight">
-                    Advanced Settings
-                </h4>
-
-                <p class="mt-4 text-gray-600 text-lg leading-relaxed">
-                    Customize the entire system according to your business requirements. Easily configure milk pricing, fat calculation methods, packaging types, billing formats, and operational preferences. The flexible settings allow you to adapt the platform to your unique workflow instead of changing your process. This ensures maximum efficiency, accuracy, and convenience for your daily operations.
-                </p>
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-yellow-100 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 3v18h18"/>
+                    <path d="M18 17l-5-5-4 4-3-3"/>
+                </svg>
             </div>
+            <h4 class="font-semibold text-lg text-gray-900">Sales & Purchase Tracking</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Monitor daily milk sales and purchases with clear insights to manage profits and stock efficiently.
+            </p>
+        </div>
 
-            <div class="relative flex justify-center order-1 md:order-2">
-                <div class="absolute w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40"></div>
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="#7a51a7" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M8 7h8M8 11h8M8 15h5"/>
+                    <rect x="3" y="5" width="18" height="16" rx="2"/>
+                </svg>
+            </div>
+            <h4 class="font-semibold text-lg text-gray-900">Advanced Settings</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Customize pricing, billing, and workflows to match your dairy business needs perfectly.
+            </p>
+        </div>
 
-                <div class="relative bg-white p-4 rounded-3xl shadow-2xl border">
-                    <img src="public/img.png" class="w-72 rounded-xl" alt="Advanced Settings"/>
+        <!-- CARD -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center mb-6">
+                <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 3v18h18"/>
+                    <path d="M18 17l-5-5-4 4-3-3"/>
+                </svg>
+            </div>
+            <h4 class="font-semibold text-lg text-gray-900">Reports & Analytics</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Get insights into sales, collections, and growth to make smarter business decisions.
+            </p>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#6366f1" viewBox="0 0 256 256" class="h-7 w-7" aria-hidden="true"><path d="M248,120v64a8,8,0,0,1-8,8H216a24,24,0,0,0-48,0H104a24,24,0,0,0-48,0H32a8,8,0,0,1-8-8V144H184V120Z" opacity="0.2"></path><path d="M255.42,117l-14-35A15.93,15.93,0,0,0,226.58,72H192V64a8,8,0,0,0-8-8H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H49a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A7.94,7.94,0,0,0,255.42,117ZM192,88h34.58l9.6,24H192ZM32,72H176v64H32ZM80,208a16,16,0,1,1,16-16A16,16,0,0,1,80,208Zm81-24H111a32,32,0,0,0-62,0H32V152H176v12.31A32.11,32.11,0,0,0,161,184Zm31,24a16,16,0,1,1,16-16A16,16,0,0,1,192,208Zm48-24H223a32.06,32.06,0,0,0-31-24V128h48Z"></path></svg>
+            </div>
+            <h4 class="font-semibold text-lg text-gray-900">Delivery App</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Help delivery staff track routes and mark deliveries quickly with an easy-to-use interface.
+            </p>
+        </div>
+
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#0bca4d" viewBox="0 0 256 256" class="h-7 w-7" aria-hidden="true"><path d="M192,56V200H64V56Z" opacity="0.2"></path><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"></path></svg>
+            </div>
+            <h4 class="font-semibold text-lg text-gray-900">Customers App</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Let customers manage deliveries, view bills, and stay connected with your dairy digitally.
+            </p>
+        </div>
+
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#7c3aed" viewBox="0 0 256 256" class="h-7 w-7" aria-hidden="true"><path d="M216,112v24a16,16,0,0,1-16,16H152a8,8,0,0,0-7.92,9.13L152,208a24,24,0,0,1-48,0l7.92-46.87A8,8,0,0,0,104,152H56a16,16,0,0,1-16-16V112Z" opacity="0.2"></path><path d="M216,24H72A40,40,0,0,0,32,64v72a24,24,0,0,0,24,24h48l-7.89,46.67A8.42,8.42,0,0,0,96,208a32,32,0,0,0,64,0,8.42,8.42,0,0,0-.11-1.33L152,160h48a24,24,0,0,0,24-24V32A8,8,0,0,0,216,24ZM72,40H176V80a8,8,0,0,0,16,0V40h16v64H48V64A24,24,0,0,1,72,40ZM200,144H152a16,16,0,0,0-15.84,18.26l0,.2L144,208.6a16,16,0,0,1-32,0l7.8-46.14,0-.2A16,16,0,0,0,104,144H56a8,8,0,0,1-8-8V120H208v16A8,8,0,0,1,200,144Z"></path></svg>
+            </div>
+            <h4 class="font-semibold text-lg text-gray-900">Branding</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Add your logo and business identity to bills for a clean and professional look.
+            </p>
+        </div>
+
+        <div class="card-hover bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
+            <div class="card-icon w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center mb-6">
+                <svg width="28" height="28" fill="none" stroke="#7500f4" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            </div>
+            <h4 class="font-semibold text-lg text-gray-900">Secure, Cloud-Based Storage</h4>
+            <p class="text-gray-500 mt-2 text-sm leading-relaxed">
+                Encrypted cloud backup ensures your data is always safe and accessible 24/7.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="px-6 md:px-20 py-24 bg-[#f8fafc]">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+        <!-- LEFT -->
+        <div>
+
+            <!-- Heading -->
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+                One Ecosystem for <br> All Your Stakeholders
+            </h2>
+
+            <!-- Cards -->
+            <div class="mt-10 space-y-6">
+
+                <!-- CARD -->
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 text-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="h-7 w-7" aria-hidden="true"><path d="M224,96v16a32,32,0,0,1-64,0V96H96v16a32,32,0,0,1-64,0V96L46.34,45.8A8,8,0,0,1,54,40H202a8,8,0,0,1,7.69,5.8Z" opacity="0.2"></path><path d="M231.69,93.81,217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.81A7.94,7.94,0,0,0,24,96v16a40,40,0,0,0,16,32v72a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V144a40,40,0,0,0,16-32V96A7.94,7.94,0,0,0,231.69,93.81ZM54,48H202l11.42,40H42.61Zm98,56v8a24,24,0,0,1-48,0v-8ZM51.06,132.2A24,24,0,0,1,40,112v-8H88v8a24,24,0,0,1-35.12,21.26A7.88,7.88,0,0,0,51.06,132.2ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm16-96a24,24,0,0,1-11.07,20.2,8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48Z"></path></svg>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900">Seller App</h4>
+                        <p class="text-gray-500 text-sm mt-1">
+                            Sellers run the dairy from one place—customers, billing, products, and daily operations.
+                        </p>
+                    </div>
+
                 </div>
+
+                <!-- CARD -->
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+
+                    <div class="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-gray-600 text-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 256 256" class="h-7 w-7" aria-hidden="true"><path d="M192,56V200H64V56Z" opacity="0.2"></path><path d="M176,16H80A24,24,0,0,0,56,40V216a24,24,0,0,0,24,24h96a24,24,0,0,0,24-24V40A24,24,0,0,0,176,16ZM72,64H184V192H72Zm8-32h96a8,8,0,0,1,8,8v8H72V40A8,8,0,0,1,80,32Zm96,192H80a8,8,0,0,1-8-8v-8H184v8A8,8,0,0,1,176,224Z"></path></svg>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900">Customer App</h4>
+                        <p class="text-gray-500 text-sm mt-1">
+                            Customers can pause delivery, change quantity, and view billing history anytime.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+
+                    <div class="w-12 h-12 rounded-xl bg-pink-100 flex items-center justify-center text-gray-600 text-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#e33f9d" viewBox="0 0 256 256" class="h-7 w-7" aria-hidden="true"><path d="M248,120v64a8,8,0,0,1-8,8H216a24,24,0,0,0-48,0H104a24,24,0,0,0-48,0H32a8,8,0,0,1-8-8V144H184V120Z" opacity="0.2"></path><path d="M255.42,117l-14-35A15.93,15.93,0,0,0,226.58,72H192V64a8,8,0,0,0-8-8H32A16,16,0,0,0,16,72V184a16,16,0,0,0,16,16H49a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A7.94,7.94,0,0,0,255.42,117ZM192,88h34.58l9.6,24H192ZM32,72H176v64H32ZM80,208a16,16,0,1,1,16-16A16,16,0,0,1,80,208Zm81-24H111a32,32,0,0,0-62,0H32V152H176v12.31A32.11,32.11,0,0,0,161,184Zm31,24a16,16,0,1,1,16-16A16,16,0,0,1,192,208Zm48-24H223a32.06,32.06,0,0,0-31-24V128h48Z"></path></svg>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900">Delivery App</h4>
+                        <p class="text-gray-500 text-sm mt-1">
+                            Delivery staff see today’s route, mark deliveries, and keep every drop on track.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition">
+
+                    <div class="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center text-green-600 text-xl">
+                        <!-- Milk Collection Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M200,88H56A16,16,0,0,0,40,104v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V104A16,16,0,0,0,200,88Zm0,80H56V104H200v64ZM88,128a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H96A8,8,0,0,1,88,128Z"></path>
+                            <path d="M96,24a8,8,0,0,0-8,8V56H72a8,8,0,0,0,0,16H184a8,8,0,0,0,0-16H168V32a8,8,0,0,0-16,0V56H104V32A8,8,0,0,0,96,24Z"></path>
+                        </svg>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-lg text-gray-900">Milk Collection App</h4>
+                        <p class="text-gray-500 text-sm mt-1">
+                            Record daily milk purchases from farmers with fat, quantity, and pricing—accurate, fast, and fully organized.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="relative h-full">
+
+            <!-- Blue Card -->
+            <div class="h-full bg-gradient-to-br from-sky-500 to-blue-600 rounded-3xl p-10 shadow-[0_25px_60px_rgba(59,130,246,0.45)] flex justify-center items-center">
+
             </div>
 
         </div>
